@@ -1,0 +1,260 @@
+$maxWidth: 1920;
+@mixin adaptiv-font($pcSize, $mobSize) {
+ $addSize: $pcSize - $mobSize;
+ $maxWidth: $maxWidth - 320;
+ font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+$maxWidth: 1920;
+@mixin adaptiv-line-height($pcSize, $mobSize) {
+ $addSize: $pcSize - $mobSize;
+ $maxWidth: $maxWidth - 320;
+ line-height: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+*,
+*:after,
+*:before,
+*:focus {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+}
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+html,
+body {
+	font-family: 'inter', sans-serif;
+	position: relative;
+  height: 100%;
+}
+.calc {
+  background-color: #F5F5F5;
+}
+.wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.calc_wrap {
+  background-color: #fff;
+  padding-top: 87px;
+  padding-bottom: 87px;
+}
+@media (max-width: 575px) {
+  .calc_wrap {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+}
+.calc_row {
+  margin: 0 -20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+@media (max-width: 575px) {
+  .calc_row {
+    flex-wrap: wrap;
+  }
+}
+.calc_form {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0 60px 0 100px;
+  input {
+    width: 100%;
+    background-color: #F5F5F5;
+    margin-bottom: 20px;
+    padding: 25px;
+    font-family: inter;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+  }
+  textarea {
+    height: 250px;
+    resize: none;
+    width: 100%;
+    background-color: #F5F5F5;
+    margin-bottom: 40px;
+    padding: 25px;
+    font-family: inter;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+  }
+  .calc_form_btn {
+    font-family: inter;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    background: #59AE6B;
+    border-radius: 4px;
+    width: 203px;
+    height: 55px;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    &:hover {
+      transform: scale(1.1, 1.1);
+      transition: 0.3s;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .calc_form {
+    width: 50%;
+    padding: 0 20px;
+  }
+}
+@media (max-width: 575px) {
+  .calc_form {
+    width: 100%;
+    order: 2;
+    input {
+      padding: 10px 20px;
+      font-size: 12px;
+      line-height: 24px;
+    }
+    textarea {
+      height: 135px;
+      font-size: 12px;
+      line-height: 24px;
+    }
+  }
+}
+.calc_desc {
+  width: 55%;
+  padding: 0 100px 0 60px;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (max-width: 991px) {
+  .calc_desc {
+    width: 50%;
+    padding: 0 20px;
+  }
+}
+@media (max-width: 575px) {
+  .calc_desc {
+    width: 100%;
+    order: 1;
+  }
+}
+.calc_desc_title {
+  width: 100%;
+  padding-bottom: 80px;
+  h1 {
+    font-family: inter;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 38px;
+  }
+}
+@media (max-width: 767px) {
+  .calc_desc_title {
+    padding-bottom: 25px;
+  }
+}
+@media (max-width: 575px) {
+  .calc_desc_title {
+    h1 {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+}
+.calc_desc_mess {
+   width: 45%;
+  padding: 0 0 60px;
+}
+@media (max-width: 767px) {
+  .calc_desc_mess {
+    width: 100%;
+  }
+}
+@media (max-width: 575px) {
+  .calc_desc_mess {
+    display: none;;
+  }
+}
+.calc_contacts_title {
+  padding-bottom: 12px;
+  h4 {
+    font-family: inter;
+    font-size: 14px;
+    line-height: 26px;
+    color: #A4A4A4;
+  }
+}
+.calc_contacts_mess {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.calc_contacts_mess_whatsapp {
+  margin-right: 20px;
+  width: 24px;
+  height: 24px;
+  img {
+    width: 100%;
+    height: 100%;
+    &:hover {
+      transform: scale(1.1, 1.1);
+      transition: 0.3s;
+    }
+  }
+}
+.calc_contacts_mess_viber {
+  width: 24px;
+  height: 24px;
+  img {
+    width: 100%;
+    height: 100%;
+    &:hover {
+      transform: scale(1.1, 1.1);
+      transition: 0.3s;
+    }
+  }
+}
+.calc_desc_email {
+  width: 55%;
+  padding: 0 0 60px;
+}
+@media (max-width: 767px) {
+  .calc_desc_email {
+    width: 100%;
+  }
+}
+@media (max-width: 575px) {
+  .calc_desc_email {
+    display: none;
+  }
+}
+.calc_contacts_subtitle {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  font-family: inter;
+  color: #59AE6B;
+}
+.calc_desc_tel {
+  width: 100%;
+  padding-bottom: 60px;
+}
+@media (max-width: 575px) {
+  .calc_desc_tel {
+    display: none;
+  }
+}
